@@ -24,6 +24,14 @@ const generatePassword = () => {
   }
 
   passwordOutput.value = password;
+
+  passwordOutput.select();
+  document.execCommand("copy");
+
+  generateButton.textContent = "Copié !";
+  setTimeout(() => {
+    generateButton.textContent = "Générer mot de passe";
+  }, 2000);
 };
 
 generateButton.addEventListener("click", generatePassword);
