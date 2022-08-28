@@ -4,6 +4,7 @@ const dataNumbers = "123456789";
 const dataSymbols = "&~\"'^*$ù,;!?(-_éèç)";
 
 const rangeValue = document.getElementById("password-length");
+const passwordOutput = document.getElementById("password-output");
 const generatePassword = () => {
   let data = [];
   let password = "";
@@ -21,6 +22,8 @@ const generatePassword = () => {
   for (let i = 0; i < rangeValue.value; i++) {
     password += data[Math.floor(Math.random() * data.length)];
   }
+
+  passwordOutput.value = password;
 };
 
 generateButton.addEventListener("click", generatePassword);
